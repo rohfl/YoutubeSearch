@@ -17,6 +17,10 @@ import java.util.ArrayList;
 public class YtAdapter extends RecyclerView.Adapter<YtAdapter.ViewHolder>{
     Context isContext ;
     ArrayList<VideoObject> videoObjects ;
+    public YtAdapter(Context context , ArrayList<VideoObject> list) {
+        this.isContext = context ;
+        this.videoObjects = list ;
+    }
     @NonNull
     @Override
     public YtAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,7 +45,7 @@ public class YtAdapter extends RecyclerView.Adapter<YtAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return videoObjects.size() ;
+        return this.videoObjects.size() ;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
