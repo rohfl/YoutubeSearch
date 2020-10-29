@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimaryDark">
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -17,7 +17,7 @@
         android:background="@drawable/search_background"
         android:hint="Search"
         android:paddingLeft="10dp"
-        android:textColor="@color/lightGray"
+        android:textColor="@color/gray"
         android:textColorHint="@color/lightGray"
         android:textSize="20dp"
         android:drawableEnd="@drawable/search"
