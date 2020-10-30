@@ -30,7 +30,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private final String API_KEY = "AIzaSyAPpjxmDBrc0ru_dNmKd_qy0gtXDT8KUQ0" ;
+//    Add Your Own Youtube Data API key here
+    private final String API_KEY = "" ;
     private RecyclerView rView ;
     private EditText searchBar ;
     private Boolean gotData ;
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     internet.setVisibility(View.GONE) ;
                     shimmerLayout.setVisibility(View.GONE);
+                    videoObjects.clear();
+                    ytAdapter = new YtAdapter(MainActivity.this, videoObjects) ;
+                    rView.setAdapter(ytAdapter) ;
                 }
             }
         });
@@ -141,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 if (gotData != true) {
                     shimmerLayout.stopShimmer();
                     shimmerLayout.setVisibility(View.GONE);
+                    videoObjects.clear();
+                    ytAdapter = new YtAdapter(MainActivity.this, videoObjects) ;
+                    rView.setAdapter(ytAdapter) ;
                     internet.setVisibility(View.VISIBLE) ;
 //                    Toast.makeText(getApplicationContext(), "Internet slow/not available", Toast.LENGTH_SHORT).show();
                 }
