@@ -15,22 +15,81 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/search_background"
+        android:drawableEnd="@drawable/search"
+        android:drawableRight="@drawable/search"
         android:hint="Search"
-        android:singleLine="true"
         android:maxLines="1"
         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
         android:textColor="@color/gray"
         android:textColorHint="@color/lightGray"
         android:textSize="20dp"
-        android:drawableEnd="@drawable/search"
-        android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:drawableRight="@drawable/search" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/internet"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar"
+        app:cardBackgroundColor="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="Please Connect to the Internet."
+                android:textColor="@color/gray"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar"
+        android:layout_marginTop="5dp"
+        app:shimmer_auto_start="false"
+        app:shimmer_shape="radial">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/place_holder"></include>
+
+            <include layout="@layout/place_holder"></include>
+
+            <include layout="@layout/place_holder"></include>
+
+            <include layout="@layout/place_holder"></include>
+
+            <include layout="@layout/place_holder"></include>
+
+            <include layout="@layout/place_holder"></include>
+
+
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,4 +101,5 @@
         app:layout_constraintEnd_toEndOf="@+id/search_bar"
         app:layout_constraintStart_toStartOf="@+id/search_bar"
         app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
